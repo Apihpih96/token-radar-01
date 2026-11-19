@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <h1 class="title">Token Launch Radar</h1>
+    <p class="subtitle">Pre-token protocols ranked by implied value</p>
+    <div class="meta-row">
+      <span id="meta-info"></span>
+      <span class="badge" id="count-badge"></span>
+    </div>
+    <p class="exclusion-note" id="exclusion-note"></p>
+  </div>
+</header>
+
+<main class="main">
+  <div class="toolbar">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search protocols…" autocomplete="off">
+    </div>
+    <select id="category-filter" title="Filter by category">
+      <option value="">All Categories</option>
+    </select>
+    <select id="chain-filter" title="Filter by chain">
+      <option value="">All Chains</option>
+    </select>
+    <label class="toggle">
+      <input type="checkbox" id="watchlist-toggle">
+      <span class="toggle-label">Watchlist only</span>
+    </label>
+    <button id="btn-reset" class="btn-reset" title="Reset filters">Reset</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="board-table">
+      <thead>
+        <tr>
+          <th data-sort="rank" class="sortable sorted-asc">Rank</th>
+          <th data-sort="name" class="sortable">Name</th>
+          <th data-sort="category" class="sortable">Category</th>
+          <th data-sort="tvl_usd" class="sortable">TVL</th>
+          <th data-sort="change_7d" class="sortable">7d Change</th>
+          <th data-sort="implied_value_usd" class="sortable">Implied Value</th>
+          <th>Chains</th>
+          <th>Farm Steps</th>
+        </tr>
+      </thead>
+      <tbody id="board-body"></tbody>
+    </table>
+  </div>
+</main>
+
+<div id="detail-panel" class="detail-panel hidden">
+  <div class="detail-inner">
+    <button id="detail-close" class="detail-close" title="Close">&times;</button>
+    <div id="detail-content"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Token Launch Radar — powered by the DefiLlama public API snapshot as of <span id="footer-date"></span></p>
+  <p class="footer-credit">Running on superbott.gg — a free client for running uncensored models</p>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
